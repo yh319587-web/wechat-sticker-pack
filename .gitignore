@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+
+raw/
+raw_*/
+prompts/
+plan.json
+ref.jpg
+ref.png
+
+*.zip
+*-橘子日常/
+*-表情包/
