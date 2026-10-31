@@ -79,13 +79,38 @@ python scripts/check.py --pack 喵庭小记-橘子日常/03_投稿包
 3. **缩略图、封面、图标从无描边版单独导出**，直接缩主图会带白边，最高频驳回原因。
 4. **详情页横幅禁止出现文字**，带标题的版本只能放 `04_宣传图/`。
 
-## 装成 skill
+## 安装
+
+### 方式一：clone 到技能目录（推荐）
 
 ```bash
-cp -r wechat-sticker-pack ~/.workbuddy/skills/
+git clone https://github.com/yh319587-web/wechat-sticker-pack.git ~/.workbuddy/skills/wechat-sticker-pack
 ```
 
-之后在对话里说「把这个角色做成微信表情包」就会自动触发。
+### 方式二：下载 ZIP
+
+在仓库页点 `Code → Download ZIP`，解压后把整个 `wechat-sticker-pack/` 放进 `~/.workbuddy/skills/`。
+
+### 其他客户端
+
+兼容 Agent Skills 规范的客户端（Claude Code 等）放对应目录即可：
+
+```bash
+~/.claude/skills/wechat-sticker-pack/        # 用户级
+<项目>/.claude/skills/wechat-sticker-pack/   # 项目级
+```
+
+不想装也能用：`references/` 里的规范和提示词配方是纯文档，直接读、直接抄。
+
+### 依赖
+
+```bash
+pip install pillow
+```
+
+`gen.py` 只用 Python 标准库，不需要 `requests`；字体见 `assets/fonts/README.md`。
+
+装好后在对话里说「把这个角色做成微信表情包」，会先问你选 plain 还是 props。
 
 ## 授权
 
